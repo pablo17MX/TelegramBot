@@ -1,3 +1,4 @@
+import os
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import (
     ApplicationBuilder,
@@ -12,11 +13,13 @@ import sqlite3
 # -------------------------
 # CONFIGURACIÓN
 # -------------------------
-import os
 TOKEN = os.getenv("BOT_TOKEN")
+
+if not TOKEN:
+    raise RuntimeError("❌ BOT_TOKEN no está definido en las variables de entorno")
+
 ADMIN_ID = 1362881076
 WELCOME_IMAGE_ID = "AgACAgEAAxkBAANsaUuAT63j9InZTN50PrKBTIv29EMAAkgLaxsZRFlGtN5Q-bc8GBsBAAMCAAN5AAM2BA"
-
 
 # -------------------------
 # Conexión a la base de datos
@@ -470,4 +473,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
