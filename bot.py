@@ -12,7 +12,8 @@ import sqlite3
 # -------------------------
 # CONFIGURACIÓN
 # -------------------------
-TOKEN = "7954953508:AAEmDsbh3KB-FvFAXlaMiDRKb5smNEB3Moc"
+import os
+TOKEN = os.getenv("BOT_TOKEN")
 ADMIN_ID = 1362881076
 WELCOME_IMAGE_ID = "AgACAgEAAxkBAANsaUuAT63j9InZTN50PrKBTIv29EMAAkgLaxsZRFlGtN5Q-bc8GBsBAAMCAAN5AAM2BA"
 
@@ -469,3 +470,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
